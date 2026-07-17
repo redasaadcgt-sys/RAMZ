@@ -1,0 +1,14 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# React
+node_modules/
+build/
+dist/
+
+# Logs
+npm-debug.log*

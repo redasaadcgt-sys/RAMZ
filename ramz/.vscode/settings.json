@@ -1,0 +1,6 @@
+{ 
+  "files.associations": {
+     "*.rz": "plaintext",
+      "*.rmz": "plaintext" 
+    } 
+}

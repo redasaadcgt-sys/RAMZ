@@ -1,0 +1,10 @@
+[project]
+name = "ramz"
+version = "0.1.0"
+
+[project.scripts]
+ramz = "ramz.ramz:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

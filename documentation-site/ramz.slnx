@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ramz/ramz.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>

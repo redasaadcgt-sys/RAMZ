@@ -1,0 +1,10 @@
+# This is the entry file of the program 
+
+entry = "ramz/examples/main.rz"
+
+
+
+# All compiled outputs go here 
+
+output = "build/"
+

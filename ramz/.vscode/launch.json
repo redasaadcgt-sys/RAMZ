@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Ramz (debug)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "ramz.ramz",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": ["build", "examples/main.rz"]
+        }
+    ]
+}

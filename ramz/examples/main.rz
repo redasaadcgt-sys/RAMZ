@@ -1,0 +1,25 @@
+/* Simple greeting function */
+
+function greeting(a){
+    var should_greet = a > 0  ;
+
+    if(should_greet){
+        var i = 1
+        print("")
+        while(i <= a){
+            print("hello world")
+            i = i + 1
+        }
+        print("")
+    }
+    else{
+        print("")
+        print(HELLO_WORLD)
+        print("")
+    }
+
+}
+
+greeting(5)
+
+
