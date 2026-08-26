@@ -558,7 +558,7 @@ function SyntaxPage() {
             </p>
 
             <pre className="bg-light border rounded p-3">
-                {"function name datatype(parameters) {\n    return value;\n}"}
+                {"function datatype name (parameters) {\n    return value;\n}"}
             </pre>
 
             <ul>
