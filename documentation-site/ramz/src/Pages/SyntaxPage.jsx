@@ -645,7 +645,7 @@ function SyntaxPage() {
             </p>
 
             <pre className="bg-light border rounded p-3">
-                {"function main void() {\n    function hello void() {\n        print(\"Hello\");\n    }\n\n    hello();\n}"}
+                {"function void main () {\n    function hello void() {\n        print(\"Hello\");\n    }\n\n    hello();\n}"}
             </pre>
 
 
