@@ -6,5 +6,5 @@ entry = "ramz/examples/main.rz"
 
 # All compiled outputs go here 
 
-output = "build/"
+output = "build/program.exe"
 

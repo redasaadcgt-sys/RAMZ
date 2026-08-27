@@ -1,4 +1,4 @@
-from llvmlite import ir
+from llvmlite import ir, binding as llvm
 import compiler.ir.nodes as nodes
 
 def declare_runtime_function(module, name, return_type, args):
@@ -78,13 +78,13 @@ class LLVMGen:
             right
         )
 
-    def emit_not(builder, value):
+    def emit_not(self, builder, value):
         if value.type != get_llvm_type("BOOL"):
             raise Exception(
                 f"Cannot NOT type {value.type}"
             )
 
-        return self.builder.xor(
+        return builder.xor(
             value,
             ir.Constant(get_llvm_type("BOOL"), 1)
         )
@@ -333,7 +333,7 @@ class LLVMGen:
 
     def __init__(self):
         self.module = ir.Module(name="ramz")   
-        self.module.triple = "x86_64-pc-windows-msvc19.50.35730" 
+        self.module.triple = llvm.get_default_triple()
         self.func = None                        
         self.builder = None                     
         self.scopes = [{
@@ -509,6 +509,7 @@ class LLVMGen:
         # NOT
         if isinstance(node, nodes.NotIR):
             return self.emit_not(
+                self.builder,
                 self.visit(node.value)
             )
 

@@ -6,6 +6,13 @@ import json
 from compiler.config import CACHE_FILE
 
 
+def get_ramz_root() -> Path:
+    return Path(__file__).resolve().parents[2]
+
+
+def get_runtime():
+    return get_ramz_root() / "runtime" / "runtime.c"
+
 
 def load_cache():
     if CACHE_FILE.exists():
@@ -210,15 +217,14 @@ def resolve_source_file(arg_file: str | None):
     )
 
 
-def resolve_build_dir(config: dict | None = None, dest: str | None = None) -> Path:
+def resolve_build_file(config: dict | None = None, dest: str | None = None) -> Path:
 
     root = get_project_root()
     config = config or load_config(root)
 
-    # 1. CLI override 
     if dest:
         return Path(dest).resolve()
 
-    # 2. config value
-    output = config.get("output", "build")
+    output = config.get("output", "build/program.exe")
+
     return (root / output).resolve()

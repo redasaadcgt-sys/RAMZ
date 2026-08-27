@@ -1,0 +1,86 @@
+{
+    "name": "RAMZ",
+    "type": "dark",
+    "colors": {},
+    "tokenColors": [
+        {
+            "scope": "comment.line.double-slash.ramz",
+            "settings": {
+                "foreground": "#6A737D"
+            }
+        },
+        {
+            "scope": "comment.line.number-sign.ramz",
+            "settings": {
+                "foreground": "#6A737D"
+            }
+        },
+        {
+            "scope": "comment.block.ramz",
+            "settings": {
+                "foreground": "#6A737D"
+            }
+        },
+        {
+            "scope": "keyword.control.ramz",
+            "settings": {
+                "foreground": "#fc21dc"
+            }
+        },
+        {
+            "scope": "constant.language.ramz",
+            "settings": {
+                "foreground": "#f0a630"
+            }
+        },
+        {
+            "scope": "storage.type.ramz",
+            "settings": {
+                "foreground": "#7d7dff"
+            }
+        },
+        {
+            "scope": "keyword.other.variable.ramz",
+            "settings": {
+                "foreground": "#bf5df0"
+            }
+        },
+        {
+            "scope": "support.function.ramz",
+            "settings": {
+                "foreground": "#39bded"
+            }
+        },
+        {
+            "scope": "keyword.operator.logical.ramz",
+            "settings": {
+                "foreground": "#fc7e93"
+            }
+        },
+        {
+            "scope": "constant.language.boolean.ramz",
+            "settings": {
+                "foreground": "#7afacd"
+            }
+        },
+        {
+            "scope": "string.quoted.double.ramz",
+            "settings": {
+                "foreground": "#dcf59d"
+            }
+        },
+        {
+            "scope": "string.quoted.single.ramz",
+            "settings": {
+                "foreground": "#dcf59d"
+            }
+        },
+        {
+            "scope": "constant.character.escape.ramz",
+            "settings": {
+                "foreground": "#fc3d5d"
+            }
+        }
+        
+    ]
+}

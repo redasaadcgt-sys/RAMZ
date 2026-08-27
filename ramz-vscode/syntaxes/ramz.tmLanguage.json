@@ -1,0 +1,146 @@
+{
+	"name": "RAMZ",
+	"patterns": [
+    	{
+        	"include": "#comments"
+    	},
+    	{
+        	"include": "#control-flow"
+    	},
+    	{
+        	"include": "#constants"
+    	},
+    	{
+        	"include": "#types"
+    	},
+    	{
+        	"include": "#variables"
+    	},
+    	{
+        	"include": "#print"
+    	},
+    	{
+        	"include": "#logical-operators"
+    	},
+    	{
+     		"include": "#booleans"
+    	},
+    	{
+        	"include": "#strings"
+    	}
+	],
+
+	"repository": {
+
+		"comments": {
+        	"patterns": [
+            	{
+                	"name": "comment.line.double-slash.ramz",
+                	"match": "//.*$"
+            	},
+            	{
+                	"name": "comment.line.number-sign.ramz",
+                	"match": "#.*$"
+            	},
+            	{
+                	"name": "comment.block.ramz",
+                	"begin": "/\\*",
+                	"end": "\\*/"
+            	}
+        	]
+    	},
+
+		"control-flow": {
+        	"patterns": [
+            	{
+                	"name": "keyword.control.ramz",
+                	"match": "\\b(if|elif|else|while|function|return)\\b"
+            	}
+        	]
+    	},
+
+    	"constants": {
+        	"patterns": [
+            	{
+                	"name": "constant.language.ramz",
+                	"match": "\\b(INT_MAX|INT_MIN|DEC_MAX|DEC_MIN|HELLO_WORLD)\\b"
+            	}
+        	]
+    	},
+
+    	"types": {
+        	"patterns": [
+            	{
+                	"name": "storage.type.ramz",
+                	"match": "\\b(int|dec|bool|str|void)\\b"
+            	}
+        	]
+    	},
+
+    	"variables": {
+        	"patterns": [
+            	{
+                	"name": "keyword.other.variable.ramz",
+                	"match": "\\b(var)\\b"
+            	}
+        	]
+    	},
+
+    	"print": {
+        	"patterns": [
+            	{
+                	"name": "support.function.ramz",
+                	"match": "\\b(print)\\b"
+            	}
+        	]
+    	},
+
+		"logical-operators": {
+    		"patterns": [
+        		{
+            		"name": "keyword.operator.logical.ramz",
+            		"match": "\\b(and|or)\\b|!"
+        		}
+    		]
+		},
+
+		"booleans": {
+    		"patterns": [
+        		{
+            		"name": "constant.language.boolean.ramz",
+            		"match": "\\b(True|False)\\b"
+        		}
+    		]
+		},
+
+    	"strings": {
+    		"patterns": [
+        		{
+            		"name": "string.quoted.double.ramz",
+            		"begin": "\"",
+            		"end": "\"",
+            		"patterns": [
+                		{
+                    		"name": "constant.character.escape.ramz",
+                    		"match": "\\\\."
+                		}
+            		]
+        		},
+        		{
+            		"name": "string.quoted.single.ramz",
+            		"begin": "'",
+            		"end": "'",
+            		"patterns": [
+                		{
+                    		"name": "constant.character.escape.ramz",
+                    		"match": "\\\\."
+                		}
+            		]
+        		}
+    		]
+		}
+
+	},
+
+	"scopeName": "source.ramz"
+}

@@ -22,7 +22,7 @@ def main():
     build_cmd.set_defaults(func=build_command)
     #run
     run_cmd = sub.add_parser("run")
-    run_cmd.add_argument("build_dir", nargs="?", default=None)
+    run_cmd.add_argument("exe", nargs="?", default=None)
     run_cmd.add_argument("--dump", nargs="*", choices=STAGES , default=None)
     run_cmd.add_argument("--trace", nargs="*", choices=STAGES , default=None)
     run_cmd.add_argument("--rebuild", action="store_true")

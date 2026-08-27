@@ -1,0 +1,38 @@
+{
+  "name": "ramz",
+  "icon": "icon.png",
+  "publisher": "ramz",
+  "displayName": "RAMZ",
+  "description": "Syntax highlighting and language support for the RAMZ programming language.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.134.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "ramz",
+      "aliases": ["RAMZ", "ramz"],
+      "extensions": [".rz",".rmz"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "ramz",
+      "scopeName": "source.ramz",
+      "path": "./syntaxes/ramz.tmLanguage.json"
+    }],
+    "themes": [
+        {
+            "label": "RAMZ Dark",
+            "uiTheme": "vs-dark",
+            "path": "./themes/ramz-color-theme.json"
+        }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redasaadcgt-sys/RAMZ.git"
+  }
+}

@@ -1,16 +1,18 @@
 import subprocess
-from ramz.utils import load_config, resolve_build_dir
+from ramz.utils import load_config, resolve_build_file
 from ramz.commands.build import build_command
 from compiler.config import BuildConfig
 
 def run_command(args):
-    build_dir = args.build_dir
+    exe_path = args.exe
     dump_flags = args.dump
     trace_flags = args.trace
     rebuild = args.rebuild
 
     config = load_config()
-    build_dir = resolve_build_dir(config,build_dir)
+
+    exe_path = resolve_build_file(config, exe_path)
+    build_dir = exe_path.parent
 
     if rebuild:
         cfg = BuildConfig(
@@ -21,8 +23,7 @@ def run_command(args):
             stop_at=None
         )
         build_command(cfg)
-        
-    exe_path = build_dir / "program.exe"
+
     pid_file = build_dir / "program.pid"
 
     process = subprocess.Popen([str(exe_path)])

@@ -72,7 +72,7 @@ ramz build <source> <destination>
 Example:
 
 ```powershell
-ramz build examples/main.rz build
+ramz build examples/main.rz build/programe.exe
 ```
 
 ### Build options
@@ -157,7 +157,7 @@ Example:
 
 ```toml
 entry = "main.rz"
-output = "program"
+output = "program.exe"
 ```
 
 Supported settings:
@@ -167,7 +167,7 @@ Supported settings:
 | `entry`  | The main source file to compile      |
 | `output` | The name of the generated executable |
 
-When `ramz.toml` exists, the `ramz build` and `ramz run` commands will automatically use these settings.
+When `ramz.toml` exists, the `ramz build` and `ramz run` commands will automatically use these settings when no arguments are provided. If a setting is not specified, the compiler will attempt to locate the source file automatically and use a default output path.
 
 ---
 

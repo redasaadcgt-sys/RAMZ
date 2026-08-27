@@ -6,11 +6,12 @@ from compiler.ir.lower import generate_lower
 from compiler.backend.llvm_generator import LLVMGen
 from ramz.debug import DebugContext
 from ramz.utils import (
+    get_runtime,
     get_msvc_env,
     find_clang,
     load_config,
     resolve_source_file,
-    resolve_build_dir
+    resolve_build_file
 )
 
 import subprocess
@@ -48,10 +49,12 @@ def build_command(args):
     trace_flags = args.trace
     stop_at = args.stop_at
 
+    runtime = get_runtime()
     env = get_msvc_env()
     config = load_config()
     source = resolve_source_file(source)
-    build_dir = resolve_build_dir(config,dest)
+    build_file = resolve_build_file(config, dest)
+    build_dir = build_file.parent
     dump_dir = build_dir/"logs"/"stage"
 
     debug = DebugContext(trace_flags, dump_flags, dump_dir)
@@ -86,7 +89,7 @@ def build_command(args):
 
     build_dir.mkdir(parents=True, exist_ok=True)
     ll_path = build_dir / "output.ll"
-    exe_path = build_dir / "program.exe"
+    exe_path = build_file
 
     with ll_path.open("w") as f:
         f.write(str(data))
@@ -95,8 +98,9 @@ def build_command(args):
 
     subprocess.run([
     str(clang),
+    "-Wno-override-module",
     str(ll_path),
-    "runtime/runtime.c",
+    runtime,
     "-o",
     str(exe_path)
 ], check=True,env=env)
